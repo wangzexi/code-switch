@@ -83,7 +83,7 @@ func (prs *ProviderRelayService) Addr() string {
 }
 
 func (prs *ProviderRelayService) registerRoutes(router gin.IRouter) {
-	router.POST("/v1/messages", prs.proxyHandler("claude", "/messages"))
+	router.POST("/v1/messages", prs.proxyHandler("claude", "/v1/messages"))
 	router.POST("/responses", prs.proxyHandler("codex", "/responses"))
 }
 
